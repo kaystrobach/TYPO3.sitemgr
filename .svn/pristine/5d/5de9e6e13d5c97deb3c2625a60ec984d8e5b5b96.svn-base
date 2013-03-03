@@ -1,0 +1,21 @@
+#tx-sitemgr-menu .toolbar-item {
+	padding-left: 8px;
+	padding-right: 7px;
+}
+
+#tx-sitemgr-menu .toolbar-item-active {
+	/*background-image: url('toolbar_item_active_bg.png');*/
+}
+#tx-sitemgr-menu .toolbar-item-menu {
+	position: absolute;
+	list-style: none;
+	padding: 2px 0px 0px;
+	margin: 0px;
+	background-color: #f9f9f9;
+	border: 1px solid #abb2bc;
+	border-top: none;
+	width: 200px;
+}
+#sitemgr_form {
+	margin:5px;
+}

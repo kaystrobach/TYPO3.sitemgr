@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'ks_sitemgr'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="title.title">Name of Customer</label>
+			<label index="main_be_user.title">Customermainuser</label>
+			<label index="admin_be_users.title">Customeradminuser</label>
+			<label index="normal_be_users.title">Normalusers</label>
+			<label index="normal_be_groups.title">Normalbegroups</label>
+			<label index="be_groups.title">Backendbenutzergruppen</label>
+			<label index="tt_address_records.title">Kontaktdaten</label>
+
+
+			<label index="title.description">Name of Customer</label>
+			<label index="main_be_user.description">Customermainuser</label>
+			<label index="admin_be_users.description">Customeradminuser</label>
+			<label index="normal_be_users.description">Normalusers</label>
+			<label index="normal_be_groups.description">Normalbegroups</label>
+			<label index="be_groups.description">Backendbenutzergruppen</label>
+			<label index="tt_address_records.description">Kontaktdaten</label>
+
+		</languageKey>
+		<languageKey index="de" type="array">
+		</languageKey>
+	</data>
+</T3locallang>

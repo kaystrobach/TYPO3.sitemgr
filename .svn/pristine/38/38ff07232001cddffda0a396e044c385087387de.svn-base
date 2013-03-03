@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'ks_sitemgr'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="be_users.tx_kssitemgr_manager_for_be_groups">Manager for BE-Groups</label>
+			<label index="tx_templavoila_tmplobj.tx_kssitemgr_manager_allowed_for_customer">Allow template for users</label>
+			<label index="tx_sitemgr_customer">SiteMgr Customer</label>
+			<label index="tx_sitemgr_customer.title">Name of Customer</label>
+			<label index="tx_sitemgr_customer.main_be_user">Customermainuser</label>
+			<label index="tx_sitemgr_customer.admin_be_users">Customeradminuser</label>
+			<label index="tx_sitemgr_customer.normal_be_users">Normalusers</label>
+			<label index="tx_sitemgr_customer.normal_be_groups">Normalbegroups</label>
+			<label index="tx_sitemgr_customer.div_required">Required Information</label>
+			<label index="tx_sitemgr_customer.div_more">Extended Data</label>
+			<label index="tx_sitemgr_customer.div_contact">Contactdata</label>
+			<label index="tx_sitemgr_customer.be_groups">backend user groups</label>
+			<label index="tx_sitemgr_customer.tt_address_records">contact details</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="be_users.tx_kssitemgr_manager_for_be_groups">Verwalter für BE Gruppen</label>
+			<label index="tx_templavoila_tmplobj.tx_kssitemgr_manager_allowed_for_customer">Erlaube Template für Mandanten</label>
+			<label index="tx_sitemgr_customer">SiteMgr Mandant</label>
+			<label index="tx_sitemgr_customer.title">Name of Customer</label>
+			<label index="tx_sitemgr_customer.main_be_user">Mandantenhauptnutzer</label>
+			<label index="tx_sitemgr_customer.admin_be_users">Mandantenadministratoren</label>
+			<label index="tx_sitemgr_customer.normal_be_users">Normale Benutzer des Mandanten</label>
+			<label index="tx_sitemgr_customer.normal_be_groups">Benutzergruppen</label>
+			<label index="tx_sitemgr_customer.div_required">Benötigte Informationen</label>
+			<label index="tx_sitemgr_customer.div_more">Erweiterte Daten</label>
+			<label index="tx_sitemgr_customer.div_contact">Kontaktdaten</label>
+			<label index="tx_sitemgr_customer.be_groups">Backendbenutzergruppen</label>
+			<label index="tx_sitemgr_customer.tt_address_records">Kontaktdaten</label>
+		</languageKey>
+	</data>
+</T3locallang>

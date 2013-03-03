@@ -1,0 +1,3 @@
+.customer-tab-icon {
+	background-image:url(../../../Images/Modules/Customer/tabIcon.gif);
+}
