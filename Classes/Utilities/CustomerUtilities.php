@@ -37,7 +37,6 @@ if (!defined ('TYPO3_MODE')) {
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
  */
-require_once(PATH_t3lib.'/class.t3lib_page.php');
 
 	class Tx_Sitemgr_Utilities_CustomerUtilities {
 		var $customerId = null;
