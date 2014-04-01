@@ -108,7 +108,6 @@ class Tx_Sitemgr_Utilities_CustomerModuleUtilities {
 				$outputArray[$key] = self::$registry[$key];
 			}
 		}
-		//t3lib_div::debug($outputArray);
 		return $outputArray;
 	}
 	static function isModuleRegistered($module) {
