@@ -1,7 +1,5 @@
 <?php
 
-require_once(PATH_typo3 . 'interfaces/interface.backend_toolbaritem.php');
-
 class Tx_Sitemgr_ToolbarItems_CustomerSelector_Item  implements backend_toolbarItem  {
 	/**
 	 * reference back to the backend object
