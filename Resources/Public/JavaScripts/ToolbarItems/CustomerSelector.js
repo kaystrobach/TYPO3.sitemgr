@@ -278,7 +278,13 @@ sitemgrCustomerSelector = Class.create({
 										var sel = sm.getSelected();
 										if (sm.hasSelection()) {
 											if (sel.data.uid != '') {
-												top.location.href = 'mod.php?M=tools_beuser&SwitchUser=' + sel.data.uid + '&switchBackUser=1';
+												goToModule('system_BeuserTxBeuser','','SwitchUser=' + sel.data.uid + '&switchBackUser=1')
+												window.setTimeout(
+													function(){
+														window.location.reload()
+													},
+													1000
+												);
 											}
 										}
 										Ext.get(win.getEl()).mask(TYPO3.LLL.core.loadingIndicator);
