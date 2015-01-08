@@ -363,10 +363,14 @@
 							handler:function() {
 								var sm  = Ext.getCmp('userGrid').getSelectionModel();
 								var sel = sm.getSelected();
-								if(sm.hasSelection()) {
-									if(sel.data.uid!='') {
-										top.location.href='mod.php?M=tools_beuser&SwitchUser='+sel.data.uid+'&switchBackUser=1';
-									}
+								if(sm.hasSelection() && sm.hasSelection()) {
+									goToModule('system_BeuserTxBeuser','','SwitchUser=' + sel.data.uid + '&switchBackUser=1');
+									window.setTimeout(
+										function(){
+											window.location.reload()
+										},
+										1000
+									);
 								}
 							}
 						}
