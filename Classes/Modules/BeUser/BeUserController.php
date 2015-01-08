@@ -235,6 +235,7 @@ class Tx_Sitemgr_Modules_BeUser_BeUserController extends Tx_Sitemgr_Modules_Abst
 				unset($dbFields['password']);
 			}
 			if($arg['uid']==0) {
+				debug('try to add user');
 				//create user
 				$customer->init();
 				$dbFields['usergroup'] = $customer->getGroups();
@@ -249,9 +250,11 @@ class Tx_Sitemgr_Modules_BeUser_BeUserController extends Tx_Sitemgr_Modules_Abst
 					);
 					return $this->getReturnForForm();
 				} else {
+					$arg['uid'] = $GLOBALS['TYPO3_DB']->sql_insert_id();
 					$customer->addUserById($GLOBALS['TYPO3_DB']->sql_insert_id());
 				}
 			} else {
+				debug('try to update user');
 				//update user
 				$erg = $GLOBALS['TYPO3_DB']->exec_UPDATEquery(
 					'be_users',
@@ -259,8 +262,12 @@ class Tx_Sitemgr_Modules_BeUser_BeUserController extends Tx_Sitemgr_Modules_Abst
 					$dbFields
 				);
 			}
-			if(t3lib_div::isAllowedAbsPath($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath'])) {
-				t3lib_div::mkdir($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath'].intval($arg['uid']));
+			if(trim($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath']) !== '') {
+				/** @var Tx_Sitemgr_Utilities_FileSystemUtility $fileSystemUtility */
+				debug(print_r($dbFields));
+				debug(print_r($arg));
+				$fileSystemUtility = t3lib_div::makeInstance('Tx_Sitemgr_Utilities_FileSystemUtility');
+				$fileSystemUtility->ensureFolderExists($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath'].intval($arg['uid']));
 			}
 		// return form
 			return $this->getReturnForForm();

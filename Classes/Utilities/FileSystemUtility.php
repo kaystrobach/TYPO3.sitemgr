@@ -54,9 +54,6 @@ class Tx_Sitemgr_Utilities_FileSystemUtility {
 		$storage = $storageRepository->findByUid($storage);
 		$newFolder = basename($folder);
 		$parentFolder = dirname($folder);
-		debug($newFolder);
-		debug($parentFolder);
-
 		$storage->createFolder($newFolder, $storage->getFolder($parentFolder));
 	}
 }
