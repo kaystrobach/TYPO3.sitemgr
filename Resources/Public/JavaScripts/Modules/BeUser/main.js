@@ -364,10 +364,10 @@
 								var sm  = Ext.getCmp('userGrid').getSelectionModel();
 								var sel = sm.getSelected();
 								if(sm.hasSelection() && sm.hasSelection()) {
-									goToModule('system_BeuserTxBeuser','','SwitchUser=' + sel.data.uid + '&switchBackUser=1');
-									window.setTimeout(
+									top.goToModule('system_BeuserTxBeuser','','SwitchUser=' + sel.data.uid + '&switchBackUser=1');
+									top.window.setTimeout(
 										function(){
-											window.location.reload()
+											top.window.location.reload()
 										},
 										1000
 									);
