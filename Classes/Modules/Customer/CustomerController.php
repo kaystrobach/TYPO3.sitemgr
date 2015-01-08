@@ -349,13 +349,15 @@ class Tx_Sitemgr_Modules_Customer_CustomerController extends Tx_Sitemgr_Modules_
 			);
 		/***********************************************************************
 		 * create user and group folder
-		 */		 		
-			if(t3lib_div::isAllowedAbsPath($GLOBALS['TYPO3_CONF_VARS']['BE']['groupHomePath'])) {	
-				t3lib_div::mkdir($GLOBALS['TYPO3_CONF_VARS']['BE']['groupHomePath'].$groupId);
+		 */
+		/** @var Tx_Sitemgr_Utilities_FileSystemUtility $fileSystemUtility */
+			$fileSystemUtility = t3lib_div::makeInstance('Tx_Sitemgr_Utilities_FileSystemUtility');
+			if(trim($GLOBALS['TYPO3_CONF_VARS']['BE']['groupHomePath']) !== '') {
+				$fileSystemUtility->ensureFolderExists($GLOBALS['TYPO3_CONF_VARS']['BE']['groupHomePath'].$groupId);
 			}
 			// user folder
-			if(t3lib_div::isAllowedAbsPath($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath'])) {
-				t3lib_div::mkdir($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath'].$userId);
+			if(trim($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath']) !== '') {
+				$fileSystemUtility->ensureFolderExists($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath'].$userId);
 			}
 		/***********************************************************************
 		 * clear cache
