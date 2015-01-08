@@ -279,6 +279,7 @@ sitemgrCustomerSelector = Class.create({
 										if (sm.hasSelection()) {
 											if (sel.data.uid != '') {
 												goToModule('system_BeuserTxBeuser','','SwitchUser=' + sel.data.uid + '&switchBackUser=1')
+												//top.location.href = 'mod.php?M=tools_beuser&SwitchUser=' + sel.data.uid + '&switchBackUser=1';
 												window.setTimeout(
 													function(){
 														window.location.reload()
