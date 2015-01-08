@@ -229,13 +229,19 @@ class Tx_Sitemgr_Modules_BeUser_BeUserController extends Tx_Sitemgr_Modules_Abst
 					'disable'        => $arg['disable'] ? 1 : 0,
 					'lang'           => $GLOBALS['BE_USER']->uc['lang'],  // set this user lang as default language for the new user
 					'options'        => 2,
-					'fileoper_perms' => 15,
+					#'fileoper_perms' => 15,
 			);
 			if($arg['password']=='') {
 				unset($dbFields['password']);
 			}
 			if($arg['uid']==0) {
-				debug('try to add user');
+				if($arg['password']=='') {
+					$this->addErrorForForm(
+						'password',
+						$GLOBALS['LANG']->getLL('error.password.required')
+					);
+					return $this->getReturnForForm();
+				}
 				//create user
 				$customer->init();
 				$dbFields['usergroup'] = $customer->getGroups();
@@ -243,18 +249,9 @@ class Tx_Sitemgr_Modules_BeUser_BeUserController extends Tx_Sitemgr_Modules_Abst
 					'be_users',
 					$dbFields
 				);
-				if($arg['password']=='') {
-					$this->addErrorForForm(
-						'password',
-						$GLOBALS['LANG']->getLL('error.password.required')
-					);
-					return $this->getReturnForForm();
-				} else {
-					$arg['uid'] = $GLOBALS['TYPO3_DB']->sql_insert_id();
-					$customer->addUserById($GLOBALS['TYPO3_DB']->sql_insert_id());
-				}
+				$arg['uid'] = $GLOBALS['TYPO3_DB']->sql_insert_id();
+				$customer->addUserById($GLOBALS['TYPO3_DB']->sql_insert_id());
 			} else {
-				debug('try to update user');
 				//update user
 				$erg = $GLOBALS['TYPO3_DB']->exec_UPDATEquery(
 					'be_users',
@@ -264,8 +261,6 @@ class Tx_Sitemgr_Modules_BeUser_BeUserController extends Tx_Sitemgr_Modules_Abst
 			}
 			if(trim($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath']) !== '') {
 				/** @var Tx_Sitemgr_Utilities_FileSystemUtility $fileSystemUtility */
-				debug(print_r($dbFields));
-				debug(print_r($arg));
 				$fileSystemUtility = t3lib_div::makeInstance('Tx_Sitemgr_Utilities_FileSystemUtility');
 				$fileSystemUtility->ensureFolderExists($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath'].intval($arg['uid']));
 			}
