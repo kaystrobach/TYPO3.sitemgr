@@ -1,6 +1,0 @@
-=== 03.11.2010 =================================================================
- - fix users can't access group folder
-   - fix options        = 2
-   - fix fileoper_perms = 15
- - fix user edit dialog to wide in safari
- - fix language of new users

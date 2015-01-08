@@ -1,5 +1,0 @@
-# cat=templates/basic; type=boolean; label=force Customer pid with PageTS, you need to set mod.web_txkssitemgrM1.customerPidPage = (id) - You need to specify the pageTS described before! And it will only be possible to create the customerrecords on the specified pages.
-customerPidPageTS = 0
-
-# cat=templates/basic; type=boolean; label=Force Beusernames prefixed with the customername followed by a "-" example customer-user
-forceBeUserPrefix = 1
