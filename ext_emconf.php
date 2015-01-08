@@ -35,6 +35,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'constraints' => array(
 		'depends' => array(
 			'be_acl' => '1.4.4',
+			'typo3' => '6.2.6-6.2.99'
 		),
 		'suggests' => array(
 			'fluid' => 'sitemgr_template',
