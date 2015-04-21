@@ -34,8 +34,6 @@
  * @author Kay Strobach <typo3@kay-strobach.de>
  */
 
-require_once('Classes/Controller/ExtMgmUpdaterController.php');
-
 class ext_update extends Tx_Sitemgr_Controller_ExtMgmUpdaterController {
 
 }
