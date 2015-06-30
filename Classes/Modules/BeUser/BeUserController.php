@@ -164,7 +164,7 @@ class Tx_Sitemgr_Modules_BeUser_BeUserController extends Tx_Sitemgr_Modules_Abst
 				'type=0 AND object_id='.intval($uid)
 			);
 			return array(
-				'success' => false,
+				'success' => true,
 				'errorMessage' => 'Success'
 			);
 		}
