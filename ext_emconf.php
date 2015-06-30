@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Sitemanager and Customer Management',
-	'description' => 'Sitemanager and Customer Management made easy. With this extension you can create Â´small adminsÂ´.',
+	'description' => 'Sitemanager and Customer Management made easy. With this extension you can create small admins´.',
 	'category' => 0,
 	'shy' => 0,
 	'version' => '2.9.1',
